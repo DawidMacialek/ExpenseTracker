@@ -6,13 +6,6 @@ const form = document.getElementById('form');
 const text = document.getElementById('text');
 const amount = document.getElementById('amount');
 
-// const dummyTransactions = [
-//     {id: 1, text: 'Flower', amount: -20 },
-//     {id: 2, text: 'Salary', amount: 300 },
-//     {id: 3, text: 'Book', amount: -10 },
-//     {id: 4, text: 'Camera', amount: 150 },
-// ];
-
 const localStorageTransactions = JSON.parse(
   localStorage.getItem('transactions')
 );
@@ -24,7 +17,7 @@ let transactions =
 function addTransaction(e) {
   e.preventDefault();
 
-  if (text.value.trim() === '' || amount.value.trim() === '') {
+  if (text.value.trim() === '' || amount.value === '') {
     alert('Please add a text and amount');
   } else {
     const transaction = {
@@ -32,7 +25,7 @@ function addTransaction(e) {
       text: text.value,
       amount: +amount.value,
     };
-    // console.log(transaction);
+
     transactions.push(transaction);
 
     addTransactionsToDOM(transaction);
