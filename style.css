@@ -137,3 +137,9 @@ input[type='decimal'] {
 .list li:hover .delete-btn {
   opacity: 1;
 }
+
+@media (orientation: landscape), (max-width: 700px) {
+  .delete-btn {
+    opacity: 1;
+  }
+}
